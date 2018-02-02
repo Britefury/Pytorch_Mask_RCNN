@@ -110,7 +110,7 @@ def ROIAlign(feature_maps, rois, config, pool_size, mode='bilinear'):
         box_indices = ixx.view(-1).int() * 0
         ix = torch.unsqueeze(ixx, 1)
         level_boxes = torch.masked_select(rois, ix)
-        if level_boxes.size()[0] == 0:
+        if len(level_boxes) == 0 or level_boxes.size()[0] == 0:
             continue
         level_boxes = level_boxes.view(-1, 4)
         

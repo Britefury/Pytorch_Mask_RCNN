@@ -217,9 +217,9 @@ if __name__ == "__main__":
     model.cuda()
     model.eval()
         
-    tf_weights= '/home/tensorboy/Downloads/mask_rcnn_coco.h5'
+    tf_weights= 'mask_rcnn_coco.h5'
     state_dict = get_state_dict(tf_weights)
         
 
     new_state_dict = make_name_right(state_dict, model)
-    torch.save(new_state_dict, '../mrcnn.pth')
+    torch.save(new_state_dict, 'mrcnn.pth')
